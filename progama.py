@@ -1,5 +1,6 @@
 from funcoes import *
-
+lista = []
+cardapio = carregar_cardapio()
 while True:
     print("Bem-vindo!")
     print("Aqui estão suas opções:")
@@ -11,14 +12,14 @@ while True:
     menu = int(input("Escolha uma opção: "))
     if menu == 1: 
         print(cardapio)
-    elif menu == 2:
-        adicionar_pedido(listacardapio)
-    elif menu == 3:
-        exibir_pedido(listacardapio)
-    elif menu == 4:
-        remover_item(listacardapio)
-    elif menu == 0:
+    if menu == 2:
+        adicionar_pedido(cardapio, lista)
+    if menu == 3:
+        exibir_pedido(lista)
+    if menu == 4:
+        remover_item(lista)
+    if menu == 0:
         print("Programa encerrado")
         break
-    else:
-        print('Essa opção não existe!')    
+    if not menu:
+        print("Essa opção não existe!")    
